@@ -307,6 +307,8 @@ import Footer1 from "~/components/Footer1.vue";
 import Prismic from "prismic-javascript";
 import PrismicConfig from "~/prismic.config.js";
 import PrismicDOM from "prismic-dom";
+import Cookies from "js-cookie";
+import cookie from "cookie";
 
 export default {
   components: {
@@ -324,6 +326,7 @@ export default {
   methods: {
     changeLang(lang){
       this.$store.dispatch('changeLang', lang)
+      location.reload();
     }
   },
   created() {
@@ -335,6 +338,10 @@ export default {
   },
   async asyncData({ context, params, error,app, req, store }) {
 
+    let { language } = cookie.parse(req.headers.cookie);
+    store.dispatch('changeLang', language)
+
+   
     try {
       const api = await Prismic.getApi(PrismicConfig.apiEndpoint, { req });
 
