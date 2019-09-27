@@ -337,9 +337,11 @@ export default {
     }
   },
   async asyncData({ context, params, error,app, req, store }) {
+    if(req){
+      let { language } = cookie.parse(req.headers.cookie);
+      store.dispatch('changeLang', language)
+    }
 
-    let { language } = cookie.parse(req.headers.cookie);
-    store.dispatch('changeLang', language)
 
    
     try {
