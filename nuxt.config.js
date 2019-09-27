@@ -84,23 +84,19 @@ export default {
   [
     "nuxt-social-meta",
     {
-      url: "lamaisonmobilecatering.com",
-      title: "La Maison - Mobile BBQ Service in Sussex",
-      description: "Mobile BBQ catering specialists in the Sussex area. We love to cater and serve fantastic canapés, dinners, barbecues, buffets as well to design and organise beautiful weddings, corporate events and private parties",
+      url: "chartwell.netlify.com",
+      title: "Chartwell Consulting Jobs",
+      description: "Try the consultancy service that delivers real results",
       img: "img/head4.jpg",
       locale: "en_GB",
-      twitter: "@bbqmaison",
-      themeColor: "#bb4a28"
+      themeColor: "#017401"
     },
   ],
   '@nuxtjs/sitemap'
 ],
 sitemap: {
   path: '/sitemap.xml',
-  hostname: 'https://lamaisonmobilecatering.com',
-  exclude: [
-    '/contact/success'
-  ],
+  hostname: 'https://chartwell.netlify.com',
   routes: async function() {
     return getAppRoutes()
   }
@@ -127,11 +123,8 @@ bootstrapVue: {
   }
 },
 generate: {
-  routes: [
-    '/home/en-gb',
-    '/home/de-de',
-    '/terms/en-gb',
-    '/terms/de-de'
-  ]
+  routes:  function() {
+    return getAppRoutes()
+  }
 }
 }

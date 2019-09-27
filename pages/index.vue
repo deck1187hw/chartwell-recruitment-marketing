@@ -30,7 +30,6 @@ export default {
     };
   },
   created() {
-      console.log('store: ',this.$store.state.language)
     if (process.browser) {
       let sc1 = document.createElement("script");
       sc1.setAttribute("src", "/js/scripts.js");
