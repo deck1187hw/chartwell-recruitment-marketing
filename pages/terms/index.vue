@@ -78,7 +78,7 @@ export default {
     }
   },
   async asyncData({ context, error, req , store}) {
-      console.log('store: ',store.state)
+
     try {
       const api = await Prismic.getApi(PrismicConfig.apiEndpoint, { req });
 

@@ -21,8 +21,10 @@ export const mutations = {
 
 export const actions = {
   async nuxtServerInit({ commit }, { req }) {
+      if(req){
     let { language } = cookie.parse(req.headers.cookie);
     commit("SET_LANGUAGE", language);
+  }
 
     },
     changeLang ({ commit, state }, payload) {
