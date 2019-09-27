@@ -8,7 +8,7 @@
             <div class="row">
               <div class="col-xs-4 col text-center-xs text-left-md">
                 <div class="bar__module">
-                  <nuxt-link to="/">
+              <nuxt-link :to="`/home/${$store.state.language}`">
                     <img
                       class="logo logo-dark"
                       alt="logo"
@@ -73,17 +73,19 @@ export default {
   },
   methods: {
     changeLang(lang){
-
-
     }
   },
-  async asyncData({ context, error, req , store}) {
-
+  async asyncData({ context, error, req , params, store}) {
+    let l = 'en-gb'
+    if(params.id){
+        l = params.id
+        store.dispatch('changeLang', l)
+    }
     try {
       const api = await Prismic.getApi(PrismicConfig.apiEndpoint, { req });
 
       let document = {};
-      const result = await api.getSingle("homepage", { lang : store.state.language });
+      const result = await api.getSingle("homepage", { lang : l });
       document = result.data;
 
       // Load the edit button

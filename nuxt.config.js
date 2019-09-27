@@ -98,7 +98,6 @@ export default {
 sitemap: {
   path: '/sitemap.xml',
   hostname: 'https://lamaisonmobilecatering.com',
-  generate: true,
   exclude: [
     '/contact/success'
   ],
@@ -127,4 +126,12 @@ bootstrapVue: {
     config.resolve.alias["vue"] = "vue/dist/vue.common";
   }
 },
+generate: {
+  routes: [
+    '/home/en-gb',
+    '/home/de-de',
+    '/terms/en-gb',
+    '/terms/de-de'
+  ]
+}
 }

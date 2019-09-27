@@ -7,7 +7,7 @@
                 ©
                 <span class="update-year"></span> Chartwell Consulting.
               </span>
-               <nuxt-link  class="type--fine-print" :to="`/terms/`">
+               <nuxt-link  class="type--fine-print" :to="`/terms/${$store.state.language}`">
               Terms and conditions</nuxt-link>
             </div>
           </div>
