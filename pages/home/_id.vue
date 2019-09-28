@@ -112,7 +112,7 @@
           </div>
         </div>
       </section>
-      <section class="feature-large parallax space--xxs" data-overlay="7">
+      <section class="feature-large parallax space--xxs cover" data-overlay="7">
         <div class="background-image-holder">
           <img alt="background" :src="document.background_image.url" />
         </div>

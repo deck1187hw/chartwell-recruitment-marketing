@@ -17,4 +17,7 @@ export default {
 strong{
   color: #017401 !important
 }
+.parallax > .background-image-holder{
+top:0px !important
+}
 </style>
