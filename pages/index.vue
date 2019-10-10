@@ -31,7 +31,12 @@ export default {
   },
   created() {
     const lang = Cookies.get("language");
-    this.$router.push({ path: 'home' })
+    if(lang){
+      this.$router.push({ path: `home/${lang}` })
+    }else{
+      this.$router.push({ path: `home/en-gb` })
+    }
+    
     if (process.browser) {
       let sc1 = document.createElement("script");
       sc1.setAttribute("src", "/js/scripts.js");
