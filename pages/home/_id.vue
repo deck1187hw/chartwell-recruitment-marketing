@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <div class="nav-container">
       <div>
         <nav id="menu2" class="bar bar-2">
@@ -38,6 +39,7 @@
     </div>
     <div class="main-container">
       <section
+      id="section_1"
         class="cover height-80 imagebg switchable text-center parallax switchable--switch space--xxs"
         data-overlay="9"
       >
@@ -63,7 +65,7 @@
           <div class="row justify-content-between align-items-center">
             <div class="col-lg-5 col-md-7">
               <div class="switchable__text">
-                <span v-html="Dom.RichText.asHtml(document.section_1_title)"></span>
+                <h1 class="sec1_title" v-html="Dom.RichText.asText(document.section_1_title)"></h1>
                 <div class="lead">
                   <span v-html="Dom.RichText.asHtml(document.section_1_text)"></span>
                 </div>
@@ -105,7 +107,14 @@
                     </li>
                   </ul>
                 </div>
-                <br />
+   
+                   <br />
+                <a
+                  class="btn type--uppercase"
+                  :href="document.case_study_pdf_link_2.url"
+                  target="_blank"
+                >     <span class="btn__text">{{document.view_case_study_text}}</span></a>
+
                 <div v-html="Dom.RichText.asHtml(document.text_below_images)"></div>
               </div>
             </div>
@@ -120,40 +129,37 @@
           <div
             class="row justify-content-between text-center boxed boxed--lg boxed--border bg--secondary"
           >
-            <div class="col-md-7">
+            <div class="col-md-6" v-for="(item, index) in document.image_1_group" :key="index">
               <div class="boxed boxed--sm">
-                <div class="slider" data-arrows="true" data-paging="true" data-timing="5000">
-                  <ul class="slides">
-                    <li v-for="(item, index) in document.image_1_group" :key="index">
-                      <img alt="Case study" :src="item.img.url" />
-                    </li>
-                  </ul>
-                </div>
+         
+              
+                   <img
+                    v-if="item.img.url"
+                    class="border--round box-shadow-wide"
+                    :src="item.img.url"
+                  />
+           
               </div>
-            </div>
-            <div class="col-md-4">
-              <div class="boxed boxed--sm">
-                <img
-                  v-if="document.image_right.url"
-                  alt="Case study"
-                  :src="document.image_right.url"
-                  class="border--round"
-                />
+            </div>            
+            <div class="col-md-12">
 
-                <div v-html="Dom.RichText.asHtml(document.section_3_text)"></div>
-                <br />
+   <div class="boxed boxed--sm">
+      <div v-html="Dom.RichText.asHtml(document.section_3_text)"></div>
+   </div>
+   <div class="boxed boxed--sm">
+
                 <a
                   class="btn type--uppercase"
                   :href="document.case_study_pdf_link.url"
                   target="_blank"
-                >View case study</a>
-              </div>
+                >     <span class="btn__text">{{document.view_case_study_text}}</span></a>
+   </div>
+
             </div>
-            <div class="col-md-12"></div>
           </div>
         </div>
       </section>
-      <section class="feature-large switchable space--xxs">
+      <section class="feature-large switchable space--xs">
         <div class="container">
           <div class="row justify-content-between text-center-xs text-left-md">
             <div class="col-lg-6 col-md-6">
@@ -346,6 +352,9 @@ export default {
 </script>
 
 <style scoped>
+h1.sec1_title{
+  font-weight: 600;
+}
 .flickity-viewport {
   height: 120px !important;
 }
