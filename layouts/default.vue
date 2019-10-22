@@ -20,4 +20,10 @@ strong{
 .parallax > .background-image-holder{
 top:0px !important
 }
+ul{
+  padding-left:25px
+}
+ul li{
+  list-style: circle;
+}
 </style>

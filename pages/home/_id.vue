@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <div class="nav-container">
       <div>
         <nav id="menu2" class="bar bar-2">
@@ -39,7 +38,7 @@
     </div>
     <div class="main-container">
       <section
-      id="section_1"
+        id="section_1"
         class="cover height-80 imagebg switchable text-center parallax switchable--switch space--xxs"
         data-overlay="9"
       >
@@ -54,10 +53,16 @@
             <div class="col-lg-12">
               <ul class="menu-horizontal text-center linklang">
                 <li>
-                  <nuxt-link to="/home/en-gb" :class="{'active': $store.state.language === 'en-gb'}">English</nuxt-link>
+                  <nuxt-link
+                    to="/home/en-gb"
+                    :class="{'active': $store.state.language === 'en-gb'}"
+                  >English</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link to="/home/de-de" :class="{'active': $store.state.language === 'de-de'}">Deutch</nuxt-link>
+                  <nuxt-link
+                    to="/home/de-de"
+                    :class="{'active': $store.state.language === 'de-de'}"
+                  >Deutch</nuxt-link>
                 </li>
               </ul>
             </div>
@@ -107,13 +112,15 @@
                     </li>
                   </ul>
                 </div>
-   
-                   <br />
+
+                <br />
                 <a
                   class="btn type--uppercase"
                   :href="document.case_study_pdf_link_2.url"
                   target="_blank"
-                >     <span class="btn__text">{{document.view_case_study_text}}</span></a>
+                >
+                  <span class="btn__text">{{document.view_case_study_text}}</span>
+                </a>
 
                 <div v-html="Dom.RichText.asHtml(document.text_below_images)"></div>
               </div>
@@ -131,30 +138,22 @@
           >
             <div class="col-md-6" v-for="(item, index) in document.image_1_group" :key="index">
               <div class="boxed boxed--sm">
-         
-              
-                   <img
-                    v-if="item.img.url"
-                    class="border--round box-shadow-wide"
-                    :src="item.img.url"
-                  />
-           
+                <img v-if="item.img.url" class="border--round box-shadow-wide" :src="item.img.url" />
               </div>
-            </div>            
+            </div>
             <div class="col-md-12">
-
-   <div class="boxed boxed--sm">
-      <div v-html="Dom.RichText.asHtml(document.section_3_text)"></div>
-   </div>
-   <div class="boxed boxed--sm">
-
+              <div class="boxed boxed--sm">
+                <div v-html="Dom.RichText.asHtml(document.section_3_text)"></div>
+              </div>
+              <div class="boxed boxed--sm">
                 <a
                   class="btn type--uppercase"
                   :href="document.case_study_pdf_link.url"
                   target="_blank"
-                >     <span class="btn__text">{{document.view_case_study_text}}</span></a>
-   </div>
-
+                >
+                  <span class="btn__text">{{document.view_case_study_text}}</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -207,13 +206,14 @@
           <div class="row text-center-xs text-left-md">
             <div class="col-md-4">
               <div class="feature">
-                <div class="boxed boxed--sm">
+                <div class="boxed boxed--sm img1cont">
                   <div class="slider" data-arrows="true" data-paging="false" data-timing="5000">
                     <ul class="slides">
                       <li v-for="(item, index) in document.block_1_images" :key="index">
                         <img
-                          :alt="Dom.RichText.asHtml(document.block_1_text)"
+                          :alt="Dom.RichText.asText(document.block_1_text)"
                           :src="item.image_1.url"
+                           class="border--round"
                         />
                       </li>
                     </ul>
@@ -226,13 +226,14 @@
             </div>
             <div class="col-md-4">
               <div class="feature">
-                <div class="boxed boxed--sm">
+                <div class="boxed boxed--sm img1cont">
                   <div class="slider" data-arrows="true" data-paging="false" data-timing="5000">
                     <ul class="slides">
                       <li v-for="(item, index) in document.block_2_images" :key="index">
                         <img
-                          :alt="Dom.RichText.asHtml(document.block_2_text)"
+                          :alt="Dom.RichText.asText(document.block_2_text)"
                           :src="item.image_2.url"
+                          class="border--round"
                         />
                       </li>
                     </ul>
@@ -244,20 +245,21 @@
             </div>
             <div class="col-md-4">
               <div class="feature">
-                <div class="boxed boxed--sm">
+                <div class="boxed boxed--sm img1cont">
                   <div class="slider" data-arrows="true" data-paging="false" data-timing="5000">
                     <ul class="slides">
                       <li v-for="(item, index) in document.block_3_images" :key="index">
                         <img
-                          :alt="Dom.RichText.asHtml(document.block_3_text)"
+                          :alt="Dom.RichText.asText(document.block_3_text)"
                           :src="item.image_3.url"
+                           class="border--round"
                         />
                       </li>
                     </ul>
                   </div>
                 </div>
                 <h4>{{document.block_3_title}}</h4>
-                <div v-html="Dom.RichText.asHtml(document.block_3_text)"></div>
+                <div v-html="Dom.RichText.asText(document.block_3_text)"></div>
               </div>
             </div>
           </div>
@@ -270,16 +272,24 @@
         <div class="container">
           <div class="row">
             <div class="col-md-8 col-lg-6">
-              <div class="cta">
-                <div v-html="Dom.RichText.asHtml(document.start_application_text1)"></div>
-                <a
-                  class="btn btn--primary type--uppercase"
-                  :href="document.link_start_application.url"
-                  target="_self"
-                >
-                  <span>{{document.start_application_text}}</span>
-                </a>
-              </div>
+              
+<div class="BoxBorder">
+                    <div class="BoxBorder-content">
+                          <div class="cta">
+                        <div v-html="Dom.RichText.asHtml(document.start_application_text1)"></div>
+                        <a
+                          class="btn btn--primary type--uppercase"
+                          :href="document.link_start_application.url"
+                          target="_self"
+                        >
+                          <span>{{document.start_application_text}}</span>
+                        </a>
+                      </div>
+                    </div>
+                </div>
+
+
+           
             </div>
           </div>
         </div>
@@ -352,7 +362,7 @@ export default {
 </script>
 
 <style scoped>
-h1.sec1_title{
+h1.sec1_title {
   font-weight: 600;
 }
 .flickity-viewport {
@@ -360,5 +370,62 @@ h1.sec1_title{
 }
 .linklang .active {
   text-decoration: underline;
+}
+
+.BoxBorder {
+    position: relative;
+    padding: 1rem
+}
+
+.BoxBorder::before,
+.BoxBorder::after,
+.BoxBorder .BoxBorder-content::before,
+.BoxBorder .BoxBorder-content::after {
+    position: absolute;
+    display: block;
+    width: 25px;
+    height: 25px;
+    content: ''
+}
+
+.BoxBorder::before {
+    top: -2px;
+    left: -2px;
+    border-top: 4px solid #017401;
+    border-left: 4px solid #017401
+}
+
+.BoxBorder::after {
+    top: -2px;
+    right: -2px;
+    border-top: 4px solid #017401;
+    border-right: 4px solid #017401
+}
+
+.BoxBorder-content::before {
+    bottom: -2px;
+    left: -2px;
+    border-bottom: 4px solid #017401;
+    border-left: 4px solid #017401
+}
+
+.BoxBorder-content::after {
+    right: -2px;
+    bottom: -2px;
+    border-right: 4px solid #017401;
+    border-bottom: 4px solid #017401
+}
+
+.BoxBorder-content--centered {
+    text-align: center
+}
+
+@media (min-width: 48em) {
+    .BoxBorder {
+        padding: 2rem
+    }
+}
+.img1cont{
+  height: 270px;
 }
 </style>
