@@ -428,4 +428,7 @@ h1.sec1_title {
 .img1cont{
   height: 270px;
 }
+ul{
+  padding-left: 0px;
+}
 </style>
