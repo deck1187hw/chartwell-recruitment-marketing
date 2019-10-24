@@ -25,7 +25,7 @@
                 <div class="bar__module">
                   <a
                     class="btn btn--sm type--uppercase btn--primary"
-                    :href="document.link_start_application.url"
+                    :href="appUrl"
                   >
                     <span class="btn__text">{{document.start_application_text}}</span>
                   </a>
@@ -76,7 +76,7 @@
                 </div>
                 <a
                   class="btn btn--primary type--uppercase"
-                  :href="document.link_start_application.url"
+                  :href="appUrl"
                 >
                   <span class="btn__text">{{document.start_application_text}}</span>
                 </a>
@@ -279,7 +279,7 @@
                         <div v-html="Dom.RichText.asHtml(document.start_application_text1)"></div>
                         <a
                           class="btn btn--primary type--uppercase"
-                          :href="document.link_start_application.url"
+                          :href="appUrl"
                           target="_self"
                         >
                           <span>{{document.start_application_text}}</span>
@@ -325,6 +325,11 @@ export default {
     changeLang(lang) {
       this.$store.dispatch("changeLang", lang);
       location.reload();
+    }
+  },
+  computed: {
+    appUrl() {
+      return `${this.document.link_start_application.url}?lang=${this.$store.state.language}`
     }
   },
   created() {
