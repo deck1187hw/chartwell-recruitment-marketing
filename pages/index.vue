@@ -10,7 +10,7 @@
                       src="https://res.cloudinary.com/chartwell-consulting/image/upload/v1566047004/websiteAssets/logo_huhwki.png"
                     />
            <nuxt-link to="/home/en-gb">English</nuxt-link> | 
-           <nuxt-link to="/home/de-de">Deutch</nuxt-link>
+           <nuxt-link to="/home/de-de">Deutsch</nuxt-link>
           </div>
         </div>
       </div>

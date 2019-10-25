@@ -23,10 +23,7 @@
               </div>
               <div class="col-xs-8 col text-right text-right-xs text-right-sm hidden-xs">
                 <div class="bar__module">
-                  <a
-                    class="btn btn--sm type--uppercase btn--primary"
-                    :href="appUrl"
-                  >
+                  <a class="btn btn--sm type--uppercase btn--primary" :href="appUrl">
                     <span class="btn__text">{{document.start_application_text}}</span>
                   </a>
                 </div>
@@ -56,13 +53,13 @@
                   <nuxt-link
                     to="/home/en-gb"
                     :class="{'active': $store.state.language === 'en-gb'}"
-                  >English</nuxt-link>
+                  >{{document.language_english}}</nuxt-link>
                 </li>
                 <li>
                   <nuxt-link
                     to="/home/de-de"
                     :class="{'active': $store.state.language === 'de-de'}"
-                  >Deutch</nuxt-link>
+                  >{{document.language_deutsch}}</nuxt-link>
                 </li>
               </ul>
             </div>
@@ -74,10 +71,7 @@
                 <div class="lead">
                   <span v-html="Dom.RichText.asHtml(document.section_1_text)"></span>
                 </div>
-                <a
-                  class="btn btn--primary type--uppercase"
-                  :href="appUrl"
-                >
+                <a class="btn btn--primary type--uppercase" :href="appUrl">
                   <span class="btn__text">{{document.start_application_text}}</span>
                 </a>
               </div>
@@ -213,7 +207,7 @@
                         <img
                           :alt="Dom.RichText.asText(document.block_1_text)"
                           :src="item.image_1.url"
-                           class="border--round"
+                          class="border--round"
                         />
                       </li>
                     </ul>
@@ -252,7 +246,7 @@
                         <img
                           :alt="Dom.RichText.asText(document.block_3_text)"
                           :src="item.image_3.url"
-                           class="border--round"
+                          class="border--round"
                         />
                       </li>
                     </ul>
@@ -272,24 +266,16 @@
         <div class="container">
           <div class="row">
             <div class="col-md-8 col-lg-6">
-              
-<div class="BoxBorder">
-                    <div class="BoxBorder-content">
-                          <div class="cta">
-                        <div v-html="Dom.RichText.asHtml(document.start_application_text1)"></div>
-                        <a
-                          class="btn btn--primary type--uppercase"
-                          :href="appUrl"
-                          target="_self"
-                        >
-                          <span>{{document.start_application_text}}</span>
-                        </a>
-                      </div>
-                    </div>
+              <div class="BoxBorder">
+                <div class="BoxBorder-content">
+                  <div class="cta">
+                    <div v-html="Dom.RichText.asHtml(document.start_application_text1)"></div>
+                    <a class="btn btn--primary type--uppercase" :href="appUrl" target="_self">
+                      <span>{{document.start_application_text}}</span>
+                    </a>
+                  </div>
                 </div>
-
-
-           
+              </div>
             </div>
           </div>
         </div>
@@ -329,7 +315,7 @@ export default {
   },
   computed: {
     appUrl() {
-      return `${this.document.link_start_application.url}?lang=${this.$store.state.language}`
+      return `${this.document.link_start_application.url}?lang=${this.$store.state.language}`;
     }
   },
   created() {
@@ -378,62 +364,62 @@ h1.sec1_title {
 }
 
 .BoxBorder {
-    position: relative;
-    padding: 1rem
+  position: relative;
+  padding: 1rem;
 }
 
 .BoxBorder::before,
 .BoxBorder::after,
 .BoxBorder .BoxBorder-content::before,
 .BoxBorder .BoxBorder-content::after {
-    position: absolute;
-    display: block;
-    width: 25px;
-    height: 25px;
-    content: ''
+  position: absolute;
+  display: block;
+  width: 25px;
+  height: 25px;
+  content: "";
 }
 
 .BoxBorder::before {
-    top: -2px;
-    left: -2px;
-    border-top: 4px solid #017401;
-    border-left: 4px solid #017401
+  top: -2px;
+  left: -2px;
+  border-top: 4px solid #017401;
+  border-left: 4px solid #017401;
 }
 
 .BoxBorder::after {
-    top: -2px;
-    right: -2px;
-    border-top: 4px solid #017401;
-    border-right: 4px solid #017401
+  top: -2px;
+  right: -2px;
+  border-top: 4px solid #017401;
+  border-right: 4px solid #017401;
 }
 
 .BoxBorder-content::before {
-    bottom: -2px;
-    left: -2px;
-    border-bottom: 4px solid #017401;
-    border-left: 4px solid #017401
+  bottom: -2px;
+  left: -2px;
+  border-bottom: 4px solid #017401;
+  border-left: 4px solid #017401;
 }
 
 .BoxBorder-content::after {
-    right: -2px;
-    bottom: -2px;
-    border-right: 4px solid #017401;
-    border-bottom: 4px solid #017401
+  right: -2px;
+  bottom: -2px;
+  border-right: 4px solid #017401;
+  border-bottom: 4px solid #017401;
 }
 
 .BoxBorder-content--centered {
-    text-align: center
+  text-align: center;
 }
 
 @media (min-width: 48em) {
-    .BoxBorder {
-        padding: 2rem
-    }
+  .BoxBorder {
+    padding: 2rem;
+  }
 }
-.img1cont{
+.img1cont {
   height: 270px;
 }
-ul{
+ul {
   padding-left: 0px;
 }
 </style>
