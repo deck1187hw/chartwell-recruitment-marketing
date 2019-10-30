@@ -44,7 +44,7 @@
         </div>
       </div>
     </section>
-     <Footer1 />
+      <Footer1 v-bind:translations="{terms:document.terms_conditions}" />
   </div>
     </div>
 </template>

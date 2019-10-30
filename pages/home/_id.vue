@@ -100,9 +100,9 @@
             <div class="col-md-7">
               <div class="boxed text-center boxed--lg boxed--border bg--secondary">
                 <div class="slider" data-arrows="true" data-paging="true" data-timing="5000">
-                  <ul class="slides">
+                  <ul class="slides border--round box-shadow-wide" >
                     <li v-for="(item, index) in document.images_section_2" :key="index">
-                      <img alt="Case study" :src="item.img.url" />
+                      <img alt="Case study" :src="item.img.url" class="" />
                     </li>
                   </ul>
                 </div>
@@ -131,8 +131,8 @@
             class="row justify-content-between text-center boxed boxed--lg boxed--border bg--secondary"
           >
             <div class="col-md-6" v-for="(item, index) in document.image_1_group" :key="index">
-              <div class="boxed boxed--sm">
-                <img v-if="item.img.url" class="border--round box-shadow-wide" :src="item.img.url" />
+              <div class="boxed boxed--sm box-shadow-wide">
+                <img v-if="item.img.url" class="box-shadow-wis" :src="item.img.url" />
               </div>
             </div>
             <div class="col-md-12">
@@ -280,7 +280,7 @@
           </div>
         </div>
       </section>
-      <Footer1 />
+      <Footer1 v-bind:translations="{terms:document.terms_conditions}" />
     </div>
   </div>
 </template>
@@ -356,6 +356,7 @@ export default {
 h1.sec1_title {
   font-weight: 600;
 }
+img{border:0;}
 .flickity-viewport {
   height: 120px !important;
 }
