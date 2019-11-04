@@ -7,7 +7,7 @@
             <div class="row">
               <div class="col-xs-4 col text-center-xs text-left-md">
                 <div class="bar__module">
-                  <nuxt-link :to="`/home/${$store.state.language}`">
+                  <a href="https://chartwell.netlify.com/">
                     <img
                       class="logo logo-dark"
                       alt="logo"
@@ -18,7 +18,7 @@
                       alt="logo"
                       src="https://res.cloudinary.com/chartwell-consulting/image/upload/v1566047004/websiteAssets/logo_huhwki.png"
                     />
-                  </nuxt-link>
+                  </a>
                 </div>
               </div>
               <div class="col-xs-8 col text-right text-right-xs text-right-sm hidden-xs">

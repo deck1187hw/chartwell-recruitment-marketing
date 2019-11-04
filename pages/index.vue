@@ -4,11 +4,13 @@
       <div class="container">
         <div class="row justify-content-between text-center">
           <div class="col-md-12">
+            <a href="https://chartwell.netlify.com/">
               <img
                       class="logohome"
                       alt="logo"
                       src="https://res.cloudinary.com/chartwell-consulting/image/upload/v1566047004/websiteAssets/logo_huhwki.png"
                     />
+            </a>
            <nuxt-link to="/home/en-gb">English</nuxt-link> | 
            <nuxt-link to="/home/de-de">Deutsch</nuxt-link>
           </div>
@@ -42,6 +44,14 @@ export default {
       sc1.setAttribute("src", "/js/scripts.js");
       document.body.appendChild(sc1);
     }
+  },
+  mounted: function(){
+    this.$nextTick(function () {
+      //TODO Remove this! quick fix for CDN issues on redirects
+      if(window.location.host === 'chartwell-applications.netlify.com' && window.location.pathname === '/'){
+        window.location.replace("https://chartwell.netlify.com/")
+      }
+    })
   },
   methods: {
 
