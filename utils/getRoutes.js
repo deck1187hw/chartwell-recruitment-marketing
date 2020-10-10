@@ -4,6 +4,8 @@ module.exports =  function getAppRoutes() {
       '/home/en-gb',
       '/home/de-de',
       '/terms/en-gb',
-      '/terms/de-de'
+      '/terms/de-de',
+      '/contact/en-gb',
+      '/contact/de-de'
     ]
 };
