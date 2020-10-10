@@ -87,7 +87,7 @@ export default {
       url: "chartwell.netlify.com",
       title: "Chartwell Consulting Jobs",
       description: "Try the consultancy service that delivers real results",
-      img: "img/head4.jpg",
+      img: "img/facebook.jpg",
       locale: "en_GB",
       themeColor: "#017401"
     },
