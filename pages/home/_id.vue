@@ -21,10 +21,17 @@
                   </a>
                 </div>
               </div>
-              <div class="col-xs-8 col text-right text-right-xs text-right-sm hidden-xs">
+              <div
+                class="col-xs-8 col text-right text-right-xs text-right-sm hidden-xs"
+              >
                 <div class="bar__module">
-                  <a class="btn btn--sm type--uppercase btn--primary" :href="appUrl">
-                    <span class="btn__text">{{document.start_application_text}}</span>
+                  <a
+                    class="btn btn--sm type--uppercase btn--primary"
+                    :href="appUrl"
+                  >
+                    <span class="btn__text">{{
+                      document.start_application_text
+                    }}</span>
                   </a>
                 </div>
               </div>
@@ -52,14 +59,16 @@
                 <li>
                   <nuxt-link
                     to="/home/en-gb"
-                    :class="{'active': $store.state.language === 'en-gb'}"
-                  >{{document.language_english}}</nuxt-link>
+                    :class="{ active: $store.state.language === 'en-gb' }"
+                    >{{ document.language_english }}</nuxt-link
+                  >
                 </li>
                 <li>
                   <nuxt-link
                     to="/home/de-de"
-                    :class="{'active': $store.state.language === 'de-de'}"
-                  >{{document.language_deutsch}}</nuxt-link>
+                    :class="{ active: $store.state.language === 'de-de' }"
+                    >{{ document.language_deutsch }}</nuxt-link
+                  >
                 </li>
               </ul>
             </div>
@@ -67,12 +76,19 @@
           <div class="row justify-content-between align-items-center">
             <div class="col-lg-5 col-md-7">
               <div class="switchable__text">
-                <h1 class="sec1_title" v-html="Dom.RichText.asText(document.section_1_title)"></h1>
+                <h1
+                  class="sec1_title"
+                  v-html="Dom.RichText.asText(document.section_1_title)"
+                ></h1>
                 <div class="lead">
-                  <span v-html="Dom.RichText.asHtml(document.section_1_text)"></span>
+                  <span
+                    v-html="Dom.RichText.asHtml(document.section_1_text)"
+                  ></span>
                 </div>
                 <a class="btn btn--primary type--uppercase" :href="appUrl">
-                  <span class="btn__text">{{document.start_application_text}}</span>
+                  <span class="btn__text">{{
+                    document.start_application_text
+                  }}</span>
                 </a>
               </div>
             </div>
@@ -85,7 +101,10 @@
                   ></b-img>
                 </div>
                 <div class="video-play-icon"></div>
-                <iframe :data-src="document.section_1_video.url" allowfullscreen="allowfullscreen"></iframe>
+                <iframe
+                  :data-src="document.section_1_video.url"
+                  allowfullscreen="allowfullscreen"
+                ></iframe>
               </div>
             </div>
           </div>
@@ -98,10 +117,20 @@
               <div v-html="Dom.RichText.asHtml(document.text_section_2)"></div>
             </div>
             <div class="col-md-7">
-              <div class="boxed text-center boxed--lg boxed--border bg--secondary">
-                <div class="slider" data-arrows="true" data-paging="true" data-timing="5000">
-                  <ul class="slides border--round box-shadow-wide" >
-                    <li v-for="(item, index) in document.images_section_2" :key="index">
+              <div
+                class="boxed text-center boxed--lg boxed--border bg--secondary"
+              >
+                <div
+                  class="slider"
+                  data-arrows="true"
+                  data-paging="true"
+                  data-timing="5000"
+                >
+                  <ul class="slides border--round box-shadow-wide">
+                    <li
+                      v-for="(item, index) in document.images_section_2"
+                      :key="index"
+                    >
                       <img alt="Case study" :src="item.img.url" class="" />
                     </li>
                   </ul>
@@ -113,10 +142,14 @@
                   :href="document.case_study_pdf_link_2.url"
                   target="_blank"
                 >
-                  <span class="btn__text">{{document.view_case_study_text}}</span>
+                  <span class="btn__text">{{
+                    document.view_case_study_text
+                  }}</span>
                 </a>
 
-                <div v-html="Dom.RichText.asHtml(document.text_below_images)"></div>
+                <div
+                  v-html="Dom.RichText.asHtml(document.text_below_images)"
+                ></div>
               </div>
             </div>
           </div>
@@ -130,14 +163,24 @@
           <div
             class="row justify-content-between text-center boxed boxed--lg boxed--border bg--secondary"
           >
-            <div class="col-md-6" v-for="(item, index) in document.image_1_group" :key="index">
+            <div
+              class="col-md-6"
+              v-for="(item, index) in document.image_1_group"
+              :key="index"
+            >
               <div class="boxed boxed--sm box-shadow-wide">
-                <img v-if="item.img.url" class="box-shadow-wis" :src="item.img.url" />
+                <img
+                  v-if="item.img.url"
+                  class="box-shadow-wis"
+                  :src="item.img.url"
+                />
               </div>
             </div>
             <div class="col-md-12">
               <div class="boxed boxed--sm">
-                <div v-html="Dom.RichText.asHtml(document.section_3_text)"></div>
+                <div
+                  v-html="Dom.RichText.asHtml(document.section_3_text)"
+                ></div>
               </div>
               <div class="boxed boxed--sm">
                 <a
@@ -145,7 +188,9 @@
                   :href="document.case_study_pdf_link.url"
                   target="_blank"
                 >
-                  <span class="btn__text">{{document.view_case_study_text}}</span>
+                  <span class="btn__text">{{
+                    document.view_case_study_text
+                  }}</span>
                 </a>
               </div>
             </div>
@@ -170,7 +215,10 @@
         </div>
       </section>
 
-      <section class="text-center feature-large imagebg parallax space--xxs" data-overlay="7">
+      <section
+        class="text-center feature-large imagebg parallax space--xxs"
+        data-overlay="7"
+      >
         <div class="background-image-holder">
           <img alt="background" :src="document.section_5_background.url" />
         </div>
@@ -178,7 +226,9 @@
           <div class="row">
             <div class="col-md-12 col-lg-10">
               <div class="boxed boxed--sm">
-                <div v-html="Dom.RichText.asHtml(document.section_5_text)"></div>
+                <div
+                  v-html="Dom.RichText.asHtml(document.section_5_text)"
+                ></div>
                 <br />
                 <div class="video-cover border--round">
                   <div class="background-image-holder">
@@ -201,9 +251,17 @@
             <div class="col-md-4">
               <div class="feature">
                 <div class="boxed boxed--sm img1cont">
-                  <div class="slider" data-arrows="true" data-paging="false" data-timing="5000">
+                  <div
+                    class="slider"
+                    data-arrows="true"
+                    data-paging="false"
+                    data-timing="5000"
+                  >
                     <ul class="slides">
-                      <li v-for="(item, index) in document.block_1_images" :key="index">
+                      <li
+                        v-for="(item, index) in document.block_1_images"
+                        :key="index"
+                      >
                         <img
                           :alt="Dom.RichText.asText(document.block_1_text)"
                           :src="item.image_1.url"
@@ -214,16 +272,24 @@
                   </div>
                 </div>
 
-                <h4>{{document.block_1_title}}</h4>
+                <h4>{{ document.block_1_title }}</h4>
                 <div v-html="Dom.RichText.asHtml(document.block_1_text)"></div>
               </div>
             </div>
             <div class="col-md-4">
               <div class="feature">
                 <div class="boxed boxed--sm img1cont">
-                  <div class="slider" data-arrows="true" data-paging="false" data-timing="5000">
+                  <div
+                    class="slider"
+                    data-arrows="true"
+                    data-paging="false"
+                    data-timing="5000"
+                  >
                     <ul class="slides">
-                      <li v-for="(item, index) in document.block_2_images" :key="index">
+                      <li
+                        v-for="(item, index) in document.block_2_images"
+                        :key="index"
+                      >
                         <img
                           :alt="Dom.RichText.asText(document.block_2_text)"
                           :src="item.image_2.url"
@@ -233,16 +299,24 @@
                     </ul>
                   </div>
                 </div>
-                <h4>{{document.block_2_title}}</h4>
+                <h4>{{ document.block_2_title }}</h4>
                 <div v-html="Dom.RichText.asHtml(document.block_2_text)"></div>
               </div>
             </div>
             <div class="col-md-4">
               <div class="feature">
                 <div class="boxed boxed--sm img1cont">
-                  <div class="slider" data-arrows="true" data-paging="false" data-timing="5000">
+                  <div
+                    class="slider"
+                    data-arrows="true"
+                    data-paging="false"
+                    data-timing="5000"
+                  >
                     <ul class="slides">
-                      <li v-for="(item, index) in document.block_3_images" :key="index">
+                      <li
+                        v-for="(item, index) in document.block_3_images"
+                        :key="index"
+                      >
                         <img
                           :alt="Dom.RichText.asText(document.block_3_text)"
                           :src="item.image_3.url"
@@ -252,7 +326,7 @@
                     </ul>
                   </div>
                 </div>
-                <h4>{{document.block_3_title}}</h4>
+                <h4>{{ document.block_3_title }}</h4>
                 <div v-html="Dom.RichText.asText(document.block_3_text)"></div>
               </div>
             </div>
@@ -269,9 +343,17 @@
               <div class="BoxBorder">
                 <div class="BoxBorder-content">
                   <div class="cta">
-                    <div v-html="Dom.RichText.asHtml(document.start_application_text1)"></div>
-                    <a class="btn btn--primary type--uppercase" :href="appUrl" target="_self">
-                      <span>{{document.start_application_text}}</span>
+                    <div
+                      v-html="
+                        Dom.RichText.asHtml(document.start_application_text1)
+                      "
+                    ></div>
+                    <a
+                      class="btn btn--primary type--uppercase"
+                      :href="appUrl"
+                      target="_self"
+                    >
+                      <span>{{ document.start_application_text }}</span>
                     </a>
                   </div>
                 </div>
@@ -280,7 +362,32 @@
           </div>
         </div>
       </section>
-      <Footer1 v-bind:translations="{terms:document.terms_conditions}" />
+
+      <section class="text-center imagebg space--sm" data-overlay="7">
+        <div class="background-image-holder">
+          <b-img :src="documentContact.top_image.url"></b-img>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-lg-6">
+              <div class="cta">
+              
+                  <nuxt-link
+            class="btn btn--primary btn--lg type--uppercase"
+            :to="`/contact/${$store.state.language}`"
+          >
+                  <span
+                    class="btn__text"
+                    v-html="Dom.RichText.asText(documentContact.title)"
+                  ></span>
+                  </nuxt-link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer1 v-bind:translations="{ terms: document.terms_conditions }" />
     </div>
   </div>
 </template>
@@ -297,26 +404,27 @@ import cookie from "cookie";
 export default {
   components: {
     Logo,
-    Footer1
+    Footer1,
   },
   watchQuery: ["page"],
-  data: function() {
+  data: function () {
     return {
       document: null,
       documentId: null,
-      Dom: PrismicDOM
+      documentContact: null,
+      Dom: PrismicDOM,
     };
   },
   methods: {
     changeLang(lang) {
       this.$store.dispatch("changeLang", lang);
       location.reload();
-    }
+    },
   },
   computed: {
     appUrl() {
       return `${this.document.link_start_application.url}?lang=${this.$store.state.language}`;
-    }
+    },
   },
   created() {
     if (process.browser) {
@@ -335,20 +443,25 @@ export default {
     try {
       const api = await Prismic.getApi(PrismicConfig.apiEndpoint, { req });
 
-      let document = {};
+      let document,
+        document_contact = {};
       const result = await api.getSingle("homepage", { lang: l });
+      const result_contact = await api.getSingle("contact", { lang: l });
       document = result.data;
+      document_contact = result_contact.data;
+
       if (process.client) window.prismic.setupEditButton();
 
       return {
         document,
+        documentContact: document_contact,
         language: l,
-        documentId: result.id
+        documentId: result.id,
       };
     } catch (e) {
       error({ statusCode: 404, message: "Page not found" });
     }
-  }
+  },
 };
 </script>
 
@@ -356,7 +469,9 @@ export default {
 h1.sec1_title {
   font-weight: 600;
 }
-img{border:0;}
+img {
+  border: 0;
+}
 .flickity-viewport {
   height: 120px !important;
 }
