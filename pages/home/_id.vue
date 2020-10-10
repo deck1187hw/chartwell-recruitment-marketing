@@ -370,17 +370,21 @@
         <div class="container">
           <div class="row">
             <div class="col-md-8 col-lg-6">
+              <div
+                class=""
+                v-html="Dom.RichText.asHtml(document.title_sec7_1)"
+              ></div>
               <div class="cta">
-              
-                  <nuxt-link
-            class="btn btn--primary btn--lg type--uppercase"
-            :to="`/contact/${$store.state.language}`"
-          >
+                <a
+                  target="_blank"
+                  class="btn btn--primary btn--lg type--uppercase"
+                  :href="`${document.link_faq.url}`"
+                >
                   <span
                     class="btn__text"
-                    v-html="Dom.RichText.asText(documentContact.title)"
+                    v-html="document.button_text_sec_faq"
                   ></span>
-                  </nuxt-link>
+                </a>
               </div>
             </div>
           </div>
