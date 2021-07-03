@@ -8,7 +8,7 @@
             <span class="update-year"></span> Chartwell Consulting.
           </span>
           <nuxt-link class="type--fine-print" :to="`/`"> 
-           <span v-if="$store.state.language == 'de-de'">Zuhause</span>
+           <span v-if="$store.state.language == 'de-de'">Home</span>
             <span v-else>Home</span>
           </nuxt-link>
 
