@@ -88,7 +88,7 @@
                         </div>
                     </div>
                     <div class="row justify-content-between align-items-center">
-                        <div class="col-lg-5 col-md-7">
+                        <div class="col-md-8 col-sm-12">
                             <div class="switchable__text">
                                 <h1
                                     class="sec1_title"
@@ -113,27 +113,6 @@
                                 >
                                     {{ document.start_application_text }}
                                 </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-4 col-12">
-                            <div
-                                class="video-cover border--round box-shadow-wide"
-                            >
-                                <div class="background-image-holder">
-                                    <b-img
-                                        :src="document.image_video.url"
-                                        :alt="
-                                            Dom.RichText.asText(
-                                                document.section_1_title,
-                                            )
-                                        "
-                                    ></b-img>
-                                </div>
-                                <div class="video-play-icon"></div>
-                                <iframe
-                                    :data-src="document.section_1_video.url"
-                                    allowfullscreen="allowfullscreen"
-                                ></iframe>
                             </div>
                         </div>
                     </div>
@@ -276,46 +255,6 @@
                 </div>
             </section>
 
-            <section
-                class="text-center feature-large imagebg parallax space--xxs"
-                data-overlay="7"
-            >
-                <div class="background-image-holder">
-                    <img
-                        alt="background"
-                        :src="document.section_5_background.url"
-                    />
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 col-lg-10">
-                            <div class="boxed boxed--sm">
-                                <div
-                                    v-html="
-                                        Dom.RichText.asHtml(
-                                            document.section_5_text,
-                                        )
-                                    "
-                                ></div>
-                                <br />
-                                <div class="video-cover border--round">
-                                    <div class="background-image-holder">
-                                        <img
-                                            alt="Video"
-                                            :src="document.image_video1.url"
-                                        />
-                                    </div>
-                                    <div class="video-play-icon"></div>
-                                    <iframe
-                                        :data-src="document.section_5_video.url"
-                                        allowfullscreen="allowfullscreen"
-                                    ></iframe>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
             <section class="space--xs">
                 <div class="container">
                     <div class="row text-center-xs text-left-md">
